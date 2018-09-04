@@ -188,32 +188,26 @@ function delegateSlotCollection(){
   if (this.event.request.dialogState === "STARTED") {
     console.log("in Beginning");
     let updatedIntent= null;
-    // updatedIntent=this.event.request.intent;
-    //optionally pre-fill slots: update the intent object with slot values for which
-    //you have defaults, then return Dialog.Delegate with this updated intent
-    // in the updatedIntent property
-    //this.emit(":delegate", updatedIntent); //uncomment this is using ASK SDK 1.0.9 or newer
 
-    //this code is necessary if using ASK SDK versions prior to 1.0.9
     if(this.isOverridden()) {
       return;
     }
+
     this.handler.response = buildSpeechletResponse({
       sessionAttributes: this.attributes,
       directives: getDialogDirectives('Dialog.Delegate', updatedIntent, null),
       shouldEndSession: false
     });
+
     this.emit(':responseReady', updatedIntent);
 
   } else if (this.event.request.dialogState !== "COMPLETED") {
     console.log("in not completed");
-    // return a Dialog.Delegate directive with no updatedIntent property.
-    //this.emit(":delegate"); //uncomment this is using ASK SDK 1.0.9 or newer
 
-    //this code necessary is using ASK SDK versions prior to 1.0.9
     if(this.isOverridden()) {
       return;
     }
+
     this.handler.response = buildSpeechletResponse({
       sessionAttributes: this.attributes,
       directives: getDialogDirectives('Dialog.Delegate', null, null),
@@ -224,11 +218,9 @@ function delegateSlotCollection(){
   } else {
     console.log("in completed");
     console.log("returning: "+ JSON.stringify(this.event.request.intent));
-    // Dialog is now complete and all required slots should be filled,
-    // so call your normal intent handler.
     return this.event.request.intent;
   }
-}
+};
 
 function createSpeechObject(optionsParam) {
   if (optionsParam && optionsParam.type === 'SSML') {
@@ -242,7 +234,7 @@ function createSpeechObject(optionsParam) {
       text: optionsParam['speech'] || optionsParam
     };
   }
-}
+};
 
 function buildSpeechletResponse(options) {
   let alexaResponse = {
@@ -270,18 +262,18 @@ function buildSpeechletResponse(options) {
       content: options.cardContent
     };
 
-    if(options.cardImage && (options.cardImage.smallImageUrl || options.cardImage.largeImageUrl)) {
+    if (options.cardImage && (options.cardImage.smallImageUrl || options.cardImage.largeImageUrl)) {
       alexaResponse.card.type = 'Standard';
       alexaResponse.card['image'] = {};
 
       delete alexaResponse.card.content;
       alexaResponse.card.text = options.cardContent;
 
-      if(options.cardImage.smallImageUrl) {
+      if (options.cardImage.smallImageUrl) {
         alexaResponse.card.image['smallImageUrl'] = options.cardImage.smallImageUrl;
       }
 
-      if(options.cardImage.largeImageUrl) {
+      if (options.cardImage.largeImageUrl) {
         alexaResponse.card.image['largeImageUrl'] = options.cardImage.largeImageUrl;
       }
     }
@@ -321,5 +313,6 @@ function getDialogDirectives(dialogType, updatedIntent, slotName) {
   if (updatedIntent) {
     directive.updatedIntent = updatedIntent;
   }
+
   return [directive];
-}
+};
