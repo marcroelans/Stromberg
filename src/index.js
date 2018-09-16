@@ -125,7 +125,6 @@ const handlers = {
   },
   'SessionEndedRequest': function () {
     speechOutput = '';
-    //this.emit(':saveState', true);//uncomment to save attributes to db on session end
     this.emit(':tell', speechOutput);
   },
   'AMAZON.NavigateHomeIntent': function () {
@@ -172,9 +171,9 @@ exports.handler = (event, context) => {
 function resolveCanonical(slot){
   //this function looks at the entity resolution part of request and returns the slot value if a synonyms is provided
   let canonical;
-  try{
+  try {
     canonical = slot.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-  }catch(err){
+  } catch(err){
     console.log(err.message);
     canonical = slot.value;
   };
@@ -184,10 +183,10 @@ function resolveCanonical(slot){
 
 function delegateSlotCollection(){
   console.log("in delegateSlotCollection");
-  console.log("current dialogState: "+this.event.request.dialogState);
+  console.log("current dialogState: " + this.event.request.dialogState);
   if (this.event.request.dialogState === "STARTED") {
     console.log("in Beginning");
-    let updatedIntent= null;
+    let updatedIntent = null;
 
     if(this.isOverridden()) {
       return;
@@ -218,6 +217,7 @@ function delegateSlotCollection(){
   } else {
     console.log("in completed");
     console.log("returning: "+ JSON.stringify(this.event.request.intent));
+
     return this.event.request.intent;
   }
 };

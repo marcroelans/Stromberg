@@ -1,0 +1,31 @@
+{
+  "name": "stromberg",
+  "version": "0.1.0",
+  "description": "An Alexa Skill that gives you a quote from Stromberg.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neulandagentur/Stromberg.git"
+  },
+  "keywords": [
+    "stromberg",
+    "alexa",
+    "alexa-skill"
+  ],
+  "author": "NEULAND. Medienagentur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neulandagentur/Stromberg/issues"
+  },
+  "homepage": "https://github.com/neulandagentur/Stromberg#readme",
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0"
+  }
+}
