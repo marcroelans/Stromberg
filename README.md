@@ -1,7 +1,10 @@
-# Stromberg "Alexa, öffne Stromberg"
+# Stromberg Alexa Skill (German)
 
-# Start
-"Alexa, öffne Stromberg"
+Diese Repository ist ausschließlich auf deutsch.
 
-## Get a Quote
-"Geb mir ein Zitat"
+## Entwicklung
+
+- Dieses Repository im Zielverzeichnis clonen
+- `cd Stromberg`
+- `npm i`
+- `npm ./node_modules/.bin/eslint src/index.js`
