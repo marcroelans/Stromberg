@@ -36,7 +36,7 @@ const quotes = {
     'Als Chef in meiner Position bist du so einsam wie Gott.',
     'Aber hier mit Quasi Modus schwager rumdöddeln.',
     'Jesus. Das sieht ja aus wie ein Massengrab für Schokoriegel.',
-   'Jetzt mach mal halblang, viertellang würde mir auch schon reichen.'
+    'Jetzt mach mal halblang, viertellang würde mir auch schon reichen.',
   ],
 
   ernie: [
