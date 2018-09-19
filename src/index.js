@@ -37,6 +37,10 @@ const quotes = {
     'Aber hier mit Quasi Modus schwager rumdöddeln.',
     'Jesus. Das sieht ja aus wie ein Massengrab für Schokoriegel.',
     'Jetzt mach mal halblang, viertellang würde mir auch schon reichen.',
+    'Karriere ist kein Nonnen-Hockey, da musst du mit allen Tricks arbeiten.',
+    'Schönheit ist ja oft nur ne Frage von Licht an oder Licht aus.',
+    'Eine Firma ist wie ne Ehefrau, die fickt dich wenn du gar nicht mehr damit rechnest.',
+    'Was dem an Grips fehlt, das gleicht er durch Blödheit wieder aus.',
   ],
 
   ernie: [
