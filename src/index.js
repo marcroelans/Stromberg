@@ -41,11 +41,18 @@ const quotes = {
     'Schönheit ist ja oft nur ne Frage von Licht an oder Licht aus.',
     'Eine Firma ist wie ne Ehefrau, die fickt dich wenn du gar nicht mehr damit rechnest.',
     'Was dem an Grips fehlt, das gleicht er durch Blödheit wieder aus.',
+    'Wenn das Heidelbeeren sind, dann heißt mein Opa Inge!',
+    'Die besten Jahre kommen doch nach 45! War mit Deutschland ja genauso!',
   ],
 
   ernie: [
     'Da musst du aufpassen wie ein Lachs. Ehhhh Luchs.',
     'Jetzt ist jetzt alles wieder',
+    'Ich muss meine Mutter neu bepflanzen. Bei der ist hinten alles zugewuchert.',
+  ],
+
+  ulf: [
+    'Der hat nen Kat. Der hätte da noch vier Jahre drinsitzen können und es wäre nichts passiert.',
   ],
 
 };
