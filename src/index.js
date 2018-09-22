@@ -33,7 +33,6 @@ const quotes = {
     'In jedem Fahrhaus läuft mehr als hier.',
     'Als Chef in meiner Position bist du so einsam wie Gott.',
     'Ja Erika mir geht es auch nicht soooooo gut.',
-    'Als Chef in meiner Position bist du so einsam wie Gott.',
     'Aber hier mit Quasi Modus schwager rumdöddeln.',
     'Jesus. Das sieht ja aus wie ein Massengrab für Schokoriegel.',
     'Jetzt mach mal halblang, viertellang würde mir auch schon reichen.',
@@ -43,6 +42,15 @@ const quotes = {
     'Was dem an Grips fehlt, das gleicht er durch Blödheit wieder aus.',
     'Wenn das Heidelbeeren sind, dann heißt mein Opa Inge!',
     'Die besten Jahre kommen doch nach 45! War mit Deutschland ja genauso!',
+    'Menschenführung ist für mich das was zum Beispiel das Stepptanzen für den Neger.. äh Farbien ist. Das hab ich im Blut.',
+    'Hätten Sie mir vorher gesagt das ich nochmal vorbei kommen soll, hätte ich mir noch wenigstens kurz feucht durch den Schritt gewischt.',
+    'Also Behinderung ist kein Grund, hier die Magdalena ist Polin die arbeitet ja auch hier.',
+    'Die moslems sind die neuen Homosexuellen.',
+    'Die Trefferquote bei Frauen ist bei mir höher, als die von nem Blinden beim Büchsen werden sag ich mal.',
+    'Bei den Weibern ist es wie bei den Hobbits, am Ende geht es immer um nen Ring.',
+    'Glauben sie, sie können mich hier behandeln wie Karl Arsch bei der Musterung oder was? Wir sind ja nicht hier bei den Baumwollpflückern!',
+    'Man sollten den Arsch nie höher hängen als man Scheisst.',
+    'Eine frau ist ja nicht automatisch schlau nur weil sie Scheisse aussieht.',
   ],
 
   ernie: [
