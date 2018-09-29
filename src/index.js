@@ -57,6 +57,7 @@ const quotes = {
     'Da musst du aufpassen wie ein Lachs. Ehhhh Luchs.',
     'Jetzt ist jetzt alles wieder',
     'Ich muss meine Mutter neu bepflanzen. Bei der ist hinten alles zugewuchert.',
+    'Die Frikadellchen waren die letzten Reste von der Frau Runkel',
   ],
 
   ulf: [
