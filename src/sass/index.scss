@@ -1,0 +1,56 @@
+@import './viewport';
+@import './stromberg';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+$color-black: rgb(33, 33, 33);
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+header {
+  position: relative;
+  width: 100%;
+  max-width: $max-large;
+  margin: 0 auto 5rem auto;
+}
+header::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+header .logo {
+  width: 7.5rem;
+  display: block;
+}
+header .neuland {
+  float: right;
+}
+header .stromberg {
+  float: left;
+}
+header img {
+  width: 100%;
+  height: auto;
+}
+
+.buttons {
+  text-align: center;
+  font-size: 0;
+}
+.button {
+  font-size: 1.125rem;
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  text-decoration: none;
+  width: 200px;
+  margin: 1.25rem;
+  color: $color-black;
+  border: .125rem solid $color-black;
+  border-radius: 2.5rem;
+  font-weight: 700;
+  transition: all .5s ease;
+}
+.button:hover {
+  background-color: $color-black;
+  color: rgb(255, 255, 255);
+}

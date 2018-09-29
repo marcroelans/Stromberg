@@ -7,6 +7,11 @@
     "type": "git",
     "url": "git+https://github.com/neulandagentur/Stromberg.git"
   },
+  "scripts": {
+    "watch": "node_modules/.bin/webpack --watch",
+    "styles": "node-sass src/sass/index.scss dist/styles.css --output-style compressed --watch",
+    "lint": "node_modules/.bin/stylelint '*.scss'"
+  },
   "keywords": [
     "stromberg",
     "alexa",
@@ -19,10 +24,16 @@
   },
   "homepage": "https://github.com/neulandagentur/Stromberg#readme",
   "devDependencies": {
-    "eslint": "^5.6.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.0"
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "node-sass": "^4.9.3",
+    "powerjs-lib": "^2.0.0-alpha.13"
   }
 }

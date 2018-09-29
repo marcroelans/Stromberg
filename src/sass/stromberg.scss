@@ -1,0 +1,148 @@
+.hair1, .hair2 {
+  background-color: rgb(55,37,20);
+  position: absolute;
+  top: 0px;
+  height: 80px;
+  width: 20px;
+  border-radius: 30%;
+}
+.hair1 {
+  left: 0;
+}
+.hair2 {
+  right: 0;
+}
+.head {
+  background-color: rgb(222,184,125);
+  width: 150px;
+  height: 200px;
+  margin: 0 auto 2.5rem auto;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.mouth {
+  width: 60px;
+  height: 25px;
+  position: absolute ;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-color: rgb(55,37,20);
+  border-style: solid;
+  border-radius: 20px;
+  border-top-width: 15px;
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  overflow: hidden;
+}
+.lipps {
+  width: 20px;
+  height: 10px;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 10px;
+  border-radius: 50%;
+  border-bottom: 5px solid black;
+}
+.eye1, .eye2 {
+  position: absolute;
+  overflow: hidden;
+  top: 60px;
+  width: 35px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(245,245,245);
+}
+.eye1 {
+  left: 30px;
+}
+.pupil{
+  content: " ";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.eye2 {
+  right: 30px;
+}
+.eye2::after,
+.eye1::after {
+  content: " ";
+  background-color: rgb(222,170,120);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: eye 3s infinite;
+}
+.nose {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 25px;
+  background-color: rgb(222,184,125);
+  border-radius: 25%;
+  box-shadow: 2px 2px 5px rgba(10, 10, 10,.5);
+}
+
+.fold1,
+.fold2,
+.fold3 {
+  width: 40px;
+  height: 0.25rem;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
+}
+.fold2 {
+  top: 25px;
+}
+.fold3 {
+  top: 35px;
+}
+
+h1 {
+  color: black;
+  overflow: hidden;
+  border-right: .15em solid transparent;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing 1s steps(30, end);
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%
+  }
+}
+
+@keyframes eye {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(-70%);
+  }
+}
