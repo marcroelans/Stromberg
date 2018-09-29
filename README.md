@@ -1,4 +1,6 @@
-# Stromberg Alexa Skill (German)
+<p align="center"><img src="https://cdn.rawgit.com/neulandagentur/Stromberg/9f02ffc5/assets/neuland_stromberg.svg" width="300" height="auto"></p>
+
+---
 
 Diese Repository ist ausschließlich auf deutsch.
 
