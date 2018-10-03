@@ -45,12 +45,18 @@ const quotes = {
     'Menschenführung ist für mich das was zum Beispiel das Stepptanzen für den Neger.. äh Farbien ist. Das hab ich im Blut.',
     'Hätten Sie mir vorher gesagt das ich nochmal vorbei kommen soll, hätte ich mir noch wenigstens kurz feucht durch den Schritt gewischt.',
     'Also Behinderung ist kein Grund, hier die Magdalena ist Polin die arbeitet ja auch hier.',
-    'Die moslems sind die neuen Homosexuellen.',
+    'Die Moslems sind die neuen Homosexuellen.',
     'Die Trefferquote bei Frauen ist bei mir höher, als die von nem Blinden beim Büchsen werden sag ich mal.',
     'Bei den Weibern ist es wie bei den Hobbits, am Ende geht es immer um nen Ring.',
     'Glauben sie, sie können mich hier behandeln wie Karl Arsch bei der Musterung oder was? Wir sind ja nicht hier bei den Baumwollpflückern!',
     'Man sollten den Arsch nie höher hängen als man Scheisst.',
     'Eine frau ist ja nicht automatisch schlau nur weil sie Scheisse aussieht.',
+    'Vom ganzen Umgangston bin ich ja normalerweise wie son Lamm im Lammpelz.',
+    'Was dem an Grips fehlt, das gleicht er durch Blödheit wieder aus.',
+    'Firma ist wie ne Ehefrau, die fickt dich wenn du gar nicht mehr damit rechnest',
+    'Ich bin ja quasi die perfekte Mischung aus jung, aber sehr erfahren. Gibts in der Form ja sonst nur auf dem Straßenstrich.',
+    'Die besten Jahre kommen doch nach 45! War mit Deutschland ja genauso!',
+    'Jochen? Jaaa, Jochen, altes Scheißhaus! Ich bins! Hörma, ich hab da ein kleines Problemchen mit der Sabbel, mit der Sabine Burer da aus deinem Haufen, du, die is aber nicht länger tragbar... Bernd!... Strombeeerg!... Hier aus dem Haus... Schadensregu... ja, oder so... ja, ist gut, tschüss.'
   ],
 
   ernie: [
