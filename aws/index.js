@@ -153,17 +153,28 @@ const handlers = {
   },
   'GetQuote': function () {
     speechOutput = '';
-    speechOutput = quotes[getRandomInt(quotes.length)];
 
     const fromNameSlotRaw = this.event.request.intent.slots.fromName.value;
     const fromNameSlot = resolveCanonical(this.event.request.intent.slots.fromName);
 
     if (fromNameSlot) {
+      // get the person array
       const personArray = quotes[fromNameSlot];
-      const personArrayLength = personArray.length;
-      const randomInt = getRandomInt(personArrayLength);
+
+      if (personArray.length === 0) {
+        speechOutput = fromNameSlot === 'ernie'
+          ? 'Ich habe nichts mehr zu sagen!'
+          : `Ich kann in meinen Akten nichts mehr zum ${fromNameSlot} finden.`
+
+        this.emit(':ask', speechOutput, speechOutput);
+      }
+
+      // get a random index from quotes
+      const randomInt = getRandomInt(personArray.length);
 
       speechOutput = personArray[randomInt];
+
+      personArray.splice(randomInt, 1);
 
       this.emit(':ask', speechOutput, speechOutput);
     } else {
