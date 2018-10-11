@@ -11,6 +11,13 @@ function moveEyes() {
   x += (lFollowX - x) * friction;
   y += (lFollowY - y) * friction;
 
+  x = x <= -18 ? -18 : x;
+  x = x >= 9 ? 9 : x;
+
+  y = y <= -9 ? -9 : y;
+  y = y >= 2 ? 2 : y;
+
+
   var translate = 'translate(' + x + 'px, ' + y + 'px)';
 
   pupilOne.style.WebkitTransform = translate;
@@ -27,8 +34,8 @@ function moveEyes() {
 document.body.addEventListener('mousemove', function (e) {
   let lMouseX = Math.max(-100, Math.min(100, document.body.offsetWidth / 2 - e.clientX));
   let lMouseY = Math.max(-100, Math.min(100, document.body.offsetHeight / 2 - e.clientY));
-  lFollowX = (20 * lMouseX / 100)*-1;
-  lFollowY = (10 * lMouseY / 100)*-1;
+  lFollowX = (30 * lMouseX / 100)*-1;
+  lFollowY = (20 * lMouseY / 100)*-1;
 });
 
 moveEyes();
