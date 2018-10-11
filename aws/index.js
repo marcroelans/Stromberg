@@ -184,14 +184,14 @@ const handlers = {
 
       this.emit(':ask', speechOutput, speechOutput);
     } else {
-      speechOutput = quotes[getRandomInt(quotes)];
+      speechOutput = quotes[getRandomInt(quotes.length)];
     }
 
     this.emit(':ask', speechOutput, speechOutput);
   },
   'Unhandled': function () {
     speechOutput = 'Ich konnte Sie leider nicht verstehen, weil mich Ulf immer ärgert.';
-    this.emit(':ask', speechOutput, speechOutput);
+    this.emit(':tell', speechOutput, speechOutput);
   },
 };
 
