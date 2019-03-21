@@ -144,32 +144,7 @@ const handlers = {
   'GetQuote': function () {
     speechOutput = '';
 
-    const fromNameSlotRaw = this.event.request.intent.slots.fromName.value;
-    const fromNameSlot = resolveCanonical(this.event.request.intent.slots.fromName);
-
-    if (fromNameSlot) {
-      // get the person array
-      const personArray = quotes[fromNameSlot];
-
-      if (personArray.length === 0) {
-        speechOutput = fromNameSlot === 'ernie'
-          ? 'Ich habe nichts mehr zu sagen!'
-          : `Ich kann in meinen Akten nichts mehr zum ${fromNameSlot} finden.`
-
-        this.emit(':ask', speechOutput, speechOutput);
-      }
-
-      // get a random index from quotes
-      const randomInt = getRandomInt(personArray.length);
-
-      speechOutput = personArray[randomInt];
-
-      personArray.splice(randomInt, 1);
-
-      this.emit(':ask', speechOutput, speechOutput);
-    } else {
-      speechOutput = quotes[getRandomInt(quotes.length)];
-    }
+    speechOutput = quotes[getRandomInt(quotes.length)];
 
     this.emit(':ask', speechOutput, speechOutput);
   },
@@ -177,49 +152,6 @@ const handlers = {
     speechOutput = 'Ich konnte Sie leider nicht verstehen, weil mich Ulf immer ärgert.';
     this.emit(':tell', speechOutput, speechOutput);
   },
-};
-
-function resolveCanonical(slot) {
-  let canonical;
-
-  try {
-    canonical = slot.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-  } catch (err) {
-    canonical = slot.value;
-  }
-
-  return canonical;
-}
-
-function delegateSlotCollection() {
-  if (this.event.request.dialogState === 'STARTED') {
-    const updatedIntent = null;
-
-    if (this.isOverridden()) {
-      return;
-    }
-
-    this.handler.response = buildSpeechletResponse({
-      sessionAttributes: this.attributes,
-      directives: getDialogDirectives('Dialog.Delegate', updatedIntent, null),
-      shouldEndSession: false,
-    });
-
-    this.emit(':responseReady', updatedIntent);
-  } else if (this.event.request.dialogState !== 'COMPLETED') {
-    if (this.isOverridden()) {
-      return;
-    }
-
-    this.handler.response = buildSpeechletResponse({
-      sessionAttributes: this.attributes,
-      directives: getDialogDirectives('Dialog.Delegate', null, null),
-      shouldEndSession: false,
-    });
-    this.emit(':responseReady');
-  } else {
-    return this.event.request.intent;
-  }
 };
 
 function createSpeechObject(optionsParam) {
