@@ -1,28 +1,20 @@
-/**
-  * index.js
-  *
-  * @author Jan-Markus Langer
-  */
+const Alexa = require('alexa-sdk');
 
 /* eslint-disable  func-names */
 /* eslint quote-props: ["error", "consistent"] */
 
 /**
   * returns a random int between 0 and range
-  *
   * @param {Number} end
-  *
   * @return {Number}
   */
 const getRandomInt = end => Math.floor(Math.random() * end) + 0;
 
 /**
   * quotes
-  *
-  * @var {Object}
+  * @type {Object}
   */
 const quotes = {
-
   bernd: [
     'Wife. Home or not home.',
     'Mama Bacardi und ihr Gorilla.',
@@ -68,14 +60,13 @@ const quotes = {
 
   ulf: [
     'Der hat nen Kat. Der hätte da noch vier Jahre drinsitzen können und es wäre nichts passiert.',
-  ],
-
+  ]
 };
 
 /**
   * all quotes together
   *
-  * @var {Array}
+  * @type {Array}
   */
 const sumQuotes = [];
 
@@ -98,37 +89,30 @@ let reprompt;
 
 /**
   * welcome message
-  *
-  * @var {String}
+  * @type {String}
   */
 const welcomeOutput = 'Hallo mein Name ist Berthold Heisterkamp von der Capitol AG. Was darf ich für Sie tun?';
 
 /**
-* welcomeReprompt
-*
-* @var {String}
-*/
+ * welcomeReprompt
+ * @type {String}
+ */
 const welcomeReprompt = 'Einen Kaffee oder andere kalte Getränke?';
-
-const Alexa = require('alexa-sdk');
 
 /**
   * APP_ID
-  *
-  * @var {Number}
+  * @type {Number}
   */
 const APP_ID = undefined; // TODO replace with your app ID (OPTIONAL).
 
 /**
   * speechOutput
-  *
-  * @var {String}
+  * @type {String}
   */
 speechOutput = '';
 
 /**
   * handlers
-  *
   * @param {Object}
   */
 const handlers = {
@@ -195,21 +179,12 @@ const handlers = {
   },
 };
 
-exports.handler = (event, context) => {
-  const alexa = Alexa.handler(event, context);
-  alexa.appId = APP_ID;
-  alexa.registerHandlers(handlers);
-  alexa.execute();
-};
-
-
 function resolveCanonical(slot) {
-  // this function looks at the entity resolution part of request and returns the slot value if a synonyms is provided
   let canonical;
+
   try {
     canonical = slot.resolutions.resolutionsPerAuthority[0].values[0].value.name;
   } catch (err) {
-    console.log(err.message);
     canonical = slot.value;
   }
 
@@ -217,10 +192,7 @@ function resolveCanonical(slot) {
 }
 
 function delegateSlotCollection() {
-  console.log('in delegateSlotCollection');
-  console.log(`current dialogState: ${this.event.request.dialogState}`);
   if (this.event.request.dialogState === 'STARTED') {
-    console.log('in Beginning');
     const updatedIntent = null;
 
     if (this.isOverridden()) {
@@ -235,8 +207,6 @@ function delegateSlotCollection() {
 
     this.emit(':responseReady', updatedIntent);
   } else if (this.event.request.dialogState !== 'COMPLETED') {
-    console.log('in not completed');
-
     if (this.isOverridden()) {
       return;
     }
@@ -248,12 +218,9 @@ function delegateSlotCollection() {
     });
     this.emit(':responseReady');
   } else {
-    console.log('in completed');
-    console.log(`returning: ${JSON.stringify(this.event.request.intent)}`);
-
     return this.event.request.intent;
   }
-}
+};
 
 function createSpeechObject(optionsParam) {
   if (optionsParam && optionsParam.type === 'SSML') {
@@ -267,7 +234,7 @@ function createSpeechObject(optionsParam) {
     type: optionsParam.type || 'PlainText',
     text: optionsParam.speech || optionsParam,
   };
-}
+};
 
 function buildSpeechletResponse(options) {
   const alexaResponse = {
@@ -329,8 +296,9 @@ function buildSpeechletResponse(options) {
   if (options.sessionAttributes) {
     returnResult.sessionAttributes = options.sessionAttributes;
   }
+
   return returnResult;
-}
+};
 
 function getDialogDirectives(dialogType, updatedIntent, slotName) {
   const directive = {
@@ -348,4 +316,11 @@ function getDialogDirectives(dialogType, updatedIntent, slotName) {
   }
 
   return [directive];
-}
+};
+
+exports.handler = (event, context) => {
+  const alexa = Alexa.handler(event, context);
+  alexa.appId = APP_ID;
+  alexa.registerHandlers(handlers);
+  alexa.execute();
+};
