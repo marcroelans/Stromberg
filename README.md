@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cdn.jsdelivr.net/gh/neulandagentur/Stromberg@9f02ffc5/assets/neuland_stromberg.svg" width="300" height="auto"></p>
+<p align="center"><img src="assets/logo.png" width="300" height="auto"></p>
 
 ---
 
